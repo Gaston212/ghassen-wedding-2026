@@ -238,7 +238,7 @@ export default function Home() {
             target="_blank"
             className="mt-5 inline-flex items-center justify-center rounded-full border border-[#d5a84c] bg-white/70 px-10 py-3 text-lg font-bold text-[#6f421c] shadow-lg backdrop-blur-md transition hover:scale-105"
           >
-            مشاهدة الموقع على الخريطة
+          الذهاب الى الموقع
           </a>
 
           <iframe
