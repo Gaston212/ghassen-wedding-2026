@@ -14,6 +14,18 @@ export default function Home() {
   const [time, setTime] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
   useEffect(() => {
+    document.title = "❤︎ غسان و نهى";
+
+    const favicon = document.querySelector("link[rel='icon']") || document.createElement("link");
+    favicon.setAttribute("rel", "icon");
+    favicon.setAttribute(
+      "href",
+      "data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❤︎</text></svg>"
+    );
+    document.head.appendChild(favicon);
+  }, []);
+
+  useEffect(() => {
     const timer = setInterval(() => {
       const distance = weddingDate - new Date().getTime();
 
@@ -62,11 +74,11 @@ export default function Home() {
   };
 
   const Box = ({ value, label }: { value: number; label: string }) => (
-    <div className="rounded-2xl border border-[#d5a84c]/70 bg-white/65 px-3 py-3 shadow-lg backdrop-blur-md">
-      <div className="text-2xl font-bold text-[#7a3f12]">
+    <div className="rounded-2xl border border-[#d5a84c]/70 bg-white/65 px-2 py-2 shadow-lg backdrop-blur-md sm:px-3 sm:py-3">
+      <div className="text-xl font-bold text-[#7a3f12] sm:text-2xl">
         {String(value).padStart(2, "0")}
       </div>
-      <div className="mt-1 text-xs font-bold">{label}</div>
+      <div className="mt-1 text-[10px] font-bold sm:text-xs">{label}</div>
     </div>
   );
 
@@ -90,7 +102,7 @@ export default function Home() {
 
       <button
         onClick={toggleMusic}
-        className="fixed left-4 top-4 z-50 flex items-center gap-2 rounded-full bg-[#c46b13] px-4 py-2 text-sm font-bold text-white shadow-lg transition hover:scale-105"
+        className="fixed left-4 top-4 z-50 flex items-center gap-2 rounded-full border border-[#d5a84c]/70 bg-white/65 px-4 py-2 text-sm font-bold text-[#7a3f12] shadow-lg backdrop-blur-md transition hover:scale-105"
       >
         <span>{musicPlaying ? "إيقاف" : "تشغيل"}</span>
         <span className="text-lg leading-none">{musicPlaying ? "⏸" : "♪"}</span>
